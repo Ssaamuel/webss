@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Confirmación de Compra</title>
+  <link rel="stylesheet" href="menu.css" />
+  <link rel="stylesheet" href="confirmacion.css" />
+</head>
+<body>
+  <header>
+    <div class="Logo">
+      <img src="iconos.png" alt="icono de la empresa" />
+    </div>
+    <nav>
+      
+      <a href="index.html" class="nav-link">MENÚ</a>
+      <a href="nosotros.html" class="nav-link">SOBRE NOSOTROS</a>
+      <a href="contactanos.html" class="nav-link">CONTACTANOS</a>
+    </nav>
+  </header>
+
+  <div class="confirmacion-container">
+    <h2>Confirmación de Pedido</h2>
+
+    <div class="product-list" id="productos-comprados">
+    </div>
+
+    <form class="formulario-confirmacion" onsubmit="return enviarFormulario();">
+      <input type="text" placeholder="Nombre completo" required />
+      <input type="text" placeholder="Dirección de entrega" required />
+      <input type="tel" placeholder="Teléfono" required />
+      <input type="email" placeholder="Correo Gmail" required />
+      <textarea placeholder="Notas adicionales (opcional)" rows="3"></textarea>
+      <button type="submit">Confirmar pedido</button>
+    </form>
+  </div>
+
+  <script>
+    const productos = JSON.parse(localStorage.getItem("cart")) || [];
+    const contenedor = document.getElementById("productos-comprados");
+
+    if (productos.length === 0) {
+      contenedor.innerHTML = "<p>No hay productos en el carrito.</p>";
+    } else {
+      productos.forEach((producto) => {
+        const div = document.createElement("div");
+        div.classList.add("product-item");
+        div.innerHTML = `
+          <img src="${producto.img}" alt="${producto.name}" style="width: 80px;">
+          <h4>${producto.name}</h4>
+          <p>$${producto.price}</p>
+        `;
+        contenedor.appendChild(div);
+      });
+    }
+
+    
+    function enviarFormulario() {
+      alert("¡Pedido confirmado! Te contactaremos pronto.");
+
+     
+      localStorage.removeItem("cart");
+
+      
+      const formulario = document.querySelector(".formulario-confirmacion");
+      formulario.reset();
+
+      
+      document.getElementById("productos-comprados").innerHTML = "<p>No hay productos en el carrito.</p>";
+
+     
+      
+
+      return false; 
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Menú</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="Logo">
+            <img src="iconos.png" alt="icono de la empresa">
+        </div>
+
+        <div class="menu-y-carrito">
+            <nav>
+                
+                <a href="index.html" class="nav-link">MENÚ</a>
+                <a href="nosotros.html" class="nav-link">SOBRE NOSOTROS</a>
+                <a href="contactanos.html" class="nav-link">CONTACTANOS</a>
+
+                <button onclick="toggleCart()" class="nav-link" style="background: none; border: none; cursor: pointer;">
+                    <img src="Carritob.png" alt="Ícono del carrito de compras" class="carrito-icono">
+                    (<span id="cart-count">0</span>)
+                </button>
+
+                <div style="position: relative;">
+                    <div id="cart-dropdown" style="display: none; position: absolute; right: 0; top: 40px; background: white; border: 1px solid #ccc; width: 300px; max-height: 400px; overflow-y: auto; z-index: 1000;">
+                        <ul id="cart-items" style="list-style: none; margin: 0; padding: 10px;"></ul>
+                        <button onclick="buyCart()" 
+                        style="width: 100%; padding: 10px; background-color: rgb(189, 23, 23); color: white; border: none; cursor: pointer;">
+                            Comprar
+                        </button>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="menu-container">
+        <div class="menu-row">
+            <div class="menu-item">
+                <img src="bbq.jpg" alt="AlitasBBQ">
+                <h2>Alitas a la BBQ - $95</h2>
+                <p>(Orden con 6 alitas)</p>
+                <p>Alitas bañadas en una salsa BBQ, ahumada y un poco dulce, que le da a cada bocado un toque profundo y sabroso. La elección ideal para quienes prefieren el sabor tradicional y suculento de las salsas barbacoa.</p>
+                <button class="agregar-carrito" data-name="Alitas a la BBQ" data-price="95" data-img="bbq.jpg">Agregar al carrito</button>
+            </div>
+
+            <div class="menu-item">
+                <img src="alitaslimon.jpg" alt="alitaslimon">
+                <h2>Alitas al limón - $90</h2>
+                <p>(Orden con 6 alitas)</p>
+                <p>>Deliciosas alitas bañadas en una salsa fresca y cítrica con un toque de limón, perfectas para los que buscan un sabor ligero, refrescante y lleno de energía. Un equilibrio ideal entre acidez y suavidad que resalta el sabor natural de las alitas.</p>
+                <button class="agregar-carrito" data-name="Alitas al limón" data-price="90" data-img="alitaslimon.jpg">Agregar al carrito</button>
+            </div>
+
+            <div class="menu-item">
+                <img src="Buffalo.jpg" alt="Buffalo">
+                <h2>Alitas a la buffalo - $100</h2>
+                <p>(Orden con 6 alitas)</p>
+                <p>Deliciosas alitas bañadas en una salsa fresca y cítrica con un toque de limón, perfectas para los que buscan un sabor ligero, refrescante y lleno de energía. Un equilibrio ideal entre acidez y suavidad que resalta el sabor natural de las alitas.</p>
+                <button class="agregar-carrito" data-name="Alitas a la buffalo" data-price="100" data-img="Buffalo.jpg">Agregar al carrito</button>
+            </div>
+        </div>
+
+        <div class="menu-row">
+            <div class="menu-item">
+                <img src="ajoymiel.jpg" alt="Alitasajoymiel">
+                <h2>Alitas al ajo y miel - $105</h2>
+                <p>(Orden con 6 alitas)</p>
+                <p>>Un irresistible combo de sabores dulces y salados. Nuestras alitas son glaseadas con una mezcla de miel natural y ajo, creando una experiencia suave, perfecta para los amantes de los sabores más dulces con un toque de picante sutil.</p>
+                <button class="agregar-carrito" data-name="Alitas al ajo y miel" data-price="105" data-img="ajoymiel.jpg">Agregar al carrito</button>
+            </div>
+
+            <div class="menu-item">
+                <img src="mangohabanero.jpg" alt="mangohabanero">
+                <h2>Alitas mango habanero - $110</h2>
+                <p>(Orden con 6 alitas)</p>
+                <p>La combinación explosiva del dulce mango con el toque picante del habanero. Estas alitas están bañadas en una salsa que combina lo mejor de dos mundos: el frescor tropical y el calor intenso del habanero, para los amantes de los sabores atrevidos y exóticos.</p>
+                <button class="agregar-carrito" data-name="Alitas mango habanero" data-price="110" data-img="mangohabanero.jpg">Agregar al carrito</button>
+            </div>
+
+            <div class="menu-item">
+                <img src="habanero.jpg" alt="habanero">
+                <h2>Alitas al habanero - $100</h2>
+                <p>(Orden con 6 alitas)</p>
+                <p>Una explosión de sabor y picante en cada bocado. Nuestras alitas se bañan en una salsa picante de habanero, que desafiará a los valientes amantes del picante. El habanero se equilibra perfectamente con una base suave y sabrosa, para crear una experiencia única.</p>
+                <button class="agregar-carrito" data-name="Alitas al habanero" data-price="100" data-img="habanero.jpg">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let cart = [];
+
+        function toggleCart() {
+            const dropdown = document.getElementById('cart-dropdown');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function addToCart(name, price, img) {
+            cart.push({ name, price, img, cantidad: 1 });
+            renderCart();
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            renderCart();
+        }
+
+        function buyCart() {
+            if (cart.length === 0) {
+                alert("El carrito está vacío.");
+            } else {
+                localStorage.setItem('cart', JSON.stringify(cart));
+                window.location.href = "confirmacion.html";
+            }
+        }
+
+        function renderCart() {
+            const cartItems = document.getElementById('cart-items');
+            const cartCount = document.getElementById('cart-count');
+            cartItems.innerHTML = '';
+
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<li>El carrito está vacío</li>';
+            } else {
+                cart.forEach((item, index) => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `
+                        <img src="${item.img}" alt="${item.name}" style="width: 50px; height: 50px; margin-right: 10px;">
+                        ${item.name} - $${item.price} 
+                        <button onclick="removeFromCart(${index})" style="float:right;">❌</button>
+                    `;
+                    cartItems.appendChild(li);
+                });
+            }
+
+            cartCount.textContent = cart.length;
+        }
+
+        document.querySelectorAll('.agregar-carrito').forEach(button => {
+            button.addEventListener('click', () => {
+                const name = button.getAttribute('data-name');
+                const price = button.getAttribute('data-price');
+                const img = button.getAttribute('data-img');
+                addToCart(name, price, img);
+            });
+        });
+    </script>
+</body>
+</html>

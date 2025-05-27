@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .fondo {
+    background-image: url('fondorosterm.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .contenedor-logo {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    border-radius: 20px;
+    color: white;
+    max-width: 400px;
+  }
+  
+  .logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  .t{
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+  
+  .s {
+    font-size: 1.2em;
+    margin-bottom: 25px;
+  }
+  
+  .btn-menu {
+    background-color: #ff3c00;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1em;
+    transition: background 0.3s ease;
+  }
+  
+  .btn-ingresar:hover {
+    background-color: #ff5e2c;
+  }
+    .carrito-icono {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+   
+  }
+  
+  
+  .carrito-icono:hover {
+    transform: scale(1.1);
+  }
+  

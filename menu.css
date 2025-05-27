@@ -1,0 +1,141 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+ 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+   
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+header {
+    display: flex;
+    height: 50px;
+    justify-content: space-between;
+    background-color: #3a2e2a;
+    align-items: center;
+    padding: 10px;
+}
+
+.Logo {
+    display: flex;
+    align-items: center;
+}
+
+.Logo img {
+    height: 75px;
+    margin-right: 10px;
+}
+
+nav a {
+    font-weight: 600;
+    padding-right: 20px; 
+}
+
+nav a:hover {
+    color: yellow;
+}
+
+.menu-container {
+    padding: 20px;
+}
+
+
+.menu-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+
+.menu-item {
+    background-color: #fff8f2;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: calc(33.333% - 20px);
+    padding: 15px;
+    text-align: center;
+    margin-bottom: 20px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+
+.menu-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+
+.menu-item h2 {
+    font-size: 20px;
+    color: #333;
+    margin-top: 10px;
+}
+
+
+.menu-item p {
+    font-size: 14px;
+    color: #777;
+    margin: 10px 0;
+}
+
+
+.menu-item h2 + p {
+    font-weight: bold;
+    color: #e67e22;
+    margin-bottom: 10px;
+}
+
+
+.menu-item button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 4px;
+}
+
+.menu-item button:hover {
+    background-color: #c0392b;
+}
+
+
+@media screen and (max-width: 768px) {
+    .menu-item {
+        width: calc(50% - 20px);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .menu-item {
+        width: 100%;
+    }
+}
+.carrito-icono {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+ 
+}
+
+
+.carrito-icono:hover {
+  transform: scale(1.1);
+}

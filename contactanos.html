@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>CONTACTANOS</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="nosotros.css">
+</head>
+<body>
+    <header>
+        <div class="Logo">
+            <img src="iconos.png" alt="icono de la empresa">
+        </div>
+        <div>
+            <nav>
+                
+                <a href="index.html" class="nav-link">MENÚ</a>
+                <a href="nosotros.html" class="nav-link">SOBRE NOSOTROS</a>
+                <a href="contactanos.html" class="nav-link">CONTACTANOS</a>
+                
+            </nav>
+        </div>
+    </header>
+    <h2>Contáctanos</h2>
+    <form id="formulario-contacto">
+      <label for="email">Tu correo electrónico:</label>
+      <input type="email" id="email" name="email" required>
+      <label for="mensaje">Mensaje:</label>
+      <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+  
+      <button type="submit">Enviar</button>
+    </form>
+    <script>
+        const formulario = document.getElementById("formulario-contacto");
+    
+        formulario.addEventListener("submit", function(event) {
+          event.preventDefault(); 
+          alert("Mensaje enviado.");
+          formulario.reset(); 
+        });
+      </script>
+    
+    
+</body>
+</html>

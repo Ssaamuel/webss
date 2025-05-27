@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Menú</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+    <div class="Logo">
+        <img src="icono.jpg" alt="icono de la empresa">
+     </div>
+     <div>
+        <nav>
+            <a href="" class="nav-link"></a>
+            <a href="" class="nav-link"></a>
+            <a href="" class="nav-link"></a>
+
+
+        </nav>
+     </div>
+    <div class="menu-container">
+        <h1 class="menu">Menú</h1>
+        <div class="menu-row">
+            <div class="menu-item">
+                <img src="bbq.jpg" alt="AlitasBBQ">
+                <h2>Alitas a la BBQ - $95</h2>
+                <p>(Orden con 6 alitas)</p>
+                <p>Alitas bañadas en una salsa BBQ, ahumada y un poco dulce, que le da a cada bocado un toque profundo y sabroso. La elección ideal para quienes prefieren el sabor tradicional y suculento de las salsas barbacoa.</p>
+            </div>
+
+            <div class="menu-item">
+                <img src="alitaslimon.jpg" alt="alitaslimon">
+                <h2>Alitas al limón - $90</h2>
+                <p>(Orden con 6 alitas)</p>
+                <p>Deliciosas alitas bañadas en una salsa fresca y cítrica con un toque de limón, perfectas para los que buscan un sabor ligero, refrescante y lleno de energía. Un equilibrio ideal entre acidez y suavidad que resalta el sabor natural de las alitas.</p>
+            </div>
+
+            <div class="menu-item">
+                <img src="Buffalo.jpg" alt="Buffalo">
+                <h2>Alitas a la buffalo - $100</h2>
+                <p>(Orden con 6 alitas)</p>
+                <p>Deliciosas alitas cubiertas con la auténtica salsa Buffalo, llena de sabor picante que hará que cada bocado sea inolvidable. La opción perfecta para los que buscan un buen desafío de sabor picante y potente.</p>
+            </div>
+        </div>
+
+        <div class="menu-row">
+            <div class="menu-item">
+                <img src="ajoymiel.jpg" alt="Alitasajoymiel">
+                <h2>Alitas al ajo y miel - $105</h2>
+                <p>(Orden con 6 alitas)</p>
+                <p>Un irresistible combo de sabores dulces y salados. Nuestras alitas son glaseadas con una mezcla de miel natural y ajo, creando una experiencia suave, perfecta para los amantes de los sabores más dulces con un toque de picante sutil.</p>
+            </div>
+
+            <div class="menu-item">
+                <img src="mangohabanero.jpg" alt="mangohabanero">
+                <h2>Alitas mango habanero - $110</h2>
+                <p>(Orden con 6 alitas)</p>
+                <p>La combinación explosiva del dulce mango con el toque picante del habanero. Estas alitas están bañadas en una salsa que combina lo mejor de dos mundos: el frescor tropical y el calor intenso del habanero, para los amantes de los sabores atrevidos y exóticos.</p>
+            </div>
+
+            <div class="menu-item">
+                <img src="habanero.jpg" alt="habanero">
+                <h2>Alitas al habanero - $100</h2>
+                <p>(Orden con 6 alitas)</p>
+                <p>Una explosión de sabor y picante en cada bocado. Nuestras alitas se bañan en una salsa picante de habanero, que desafiará a los valientes amantes del picante. El habanero se equilibra perfectamente con una base suave y sabrosa, para crear una experiencia única.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Menú</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #222;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .Logo img {
+            height: 40px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .carrito-icono {
+            width: 30px;
+            cursor: pointer;
+        }
+
+        .menu-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .menu-item {
+            border: 1px solid #ddd;
+            padding: 15px;
+            width: 250px;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        .menu-item img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .menu-item button {
+            margin-top: 10px;
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+
+        /* Carrito desplegable */
+        #carrito-desplegable {
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            width: 300px;
+            background: white;
+            border: 1px solid #ccc;
+            padding: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: none;
+            color: black;
+        }
+
+        #carrito-desplegable h3 {
+            margin-top: 0;
+        }
+
+        #carrito-desplegable .producto {
+            border-bottom: 1px solid #eee;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+        }
+
+        #carrito-desplegable .producto:last-child {
+            border-bottom: none;
+        }
+
+        #carrito-desplegable button {
+            margin-top: 5px;
+            padding: 5px 10px;
+        }
+
+        #carrito-total {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="Logo">
+        <img src="iconos.png" alt="Logo">
+    </div>
+    <nav>
+        <a href="entrada.html">ENTRADA</a>
+        <a href="menu.html">MENÚ</a>
+        <a href="nosotros.html">SOBRE NOSOTROS</a>
+        <a href="contactanos.html">CONTACTANOS</a>
+        <a href="#" id="carrito-toggle">
+            <img src="Carritob.png" alt="Carrito" class="carrito-icono">
+        </a>
+    </nav>
+
+    <!-- Carrito desplegable -->
+    <div id="carrito-desplegable">
+        <h3>🛒 Carrito</h3>
+        <div id="carrito-items"></div>
+        <div id="carrito-total">Total: $0</div>
+        <button onclick="vaciarCarrito()">Vaciar carrito</button>
+    </div>
+</header>
+
+<main class="menu-container">
+    <div class="menu-item">
+        <img src="bbq.jpg" alt="Alitas BBQ">
+        <h2>Alitas a la BBQ - $95</h2>
+        <p>(Orden con 6 alitas)</p>
+        <p>Alitas bañadas en salsa BBQ, ahumada y dulce.</p>
+        <button class="agregar-carrito">Agregar al carrito</button>
+    </div>
+
+    <div class="menu-item">
+        <img src="alitaslimon.jpg" alt="Alitas Limón">
+        <h2>Alitas al limón - $90</h2>
+        <p>(Orden con 6 alitas)</p>
+        <p>Sabor fresco, cítrico y lleno de energía.</p>
+        <button class="agregar-carrito">Agregar al carrito</button>
+    </div>
+
+    <div class="menu-item">
+        <img src="Buffalo.jpg" alt="Alitas Buffalo">
+        <h2>Alitas a la buffalo - $100</h2>
+        <p>(Orden con 6 alitas)</p>
+        <p>Salsa picante y auténtica al estilo Buffalo.</p>
+        <button class="agregar-carrito">Agregar al carrito</button>
+    </div>
+</main>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+       
+        document.querySelectorAll('.agregar-carrito').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                const nombre = item.querySelector('h2').innerText;
+                const precio = nombre.match(/\$\d+/)[0];
+                const descripcion = item.querySelectorAll('p')[1].innerText;
+                const imagen = item.querySelector('img').getAttribute('src');
+
+                const producto = {
+                    nombre,
+                    precio,
+                    descripcion,
+                    imagen,
+                    cantidad: 1
+                };
+
+                agregarAlCarrito(producto);
+                actualizarCarritoDesplegable();
+            });
+        });
+
+        // Mostrar/Ocultar carrito
+        document.getElementById('carrito-toggle').addEventListener('click', (e) => {
+            e.preventDefault();
+            const carrito = document.getElementById('carrito-desplegable');
+            carrito.style.display = carrito.style.display === 'block' ? 'none' : 'block';
+            actualizarCarritoDesplegable();
+        });
+
+        actualizarCarritoDesplegable();
+    });
+
+    function agregarAlCarrito(producto) {
+        let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+        const existente = carrito.find(p => p.nombre === producto.nombre);
+        if (existente) {
+            existente.cantidad += 1;
+        } else {
+            carrito.push(producto);
+        }
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+    }
+
+    function vaciarCarrito() {
+        localStorage.removeItem('carrito');
+        actualizarCarritoDesplegable();
+    }
+
+    function eliminarProducto(index) {
+        let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+        carrito.splice(index, 1);
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+        actualizarCarritoDesplegable();
+    }
+
+    function actualizarCarritoDesplegable() {
+        const contenedor = document.getElementById('carrito-items');
+        const totalEl = document.getElementById('carrito-total');
+        let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+        contenedor.innerHTML = '';
+        let total = 0;
+
+        carrito.forEach((producto, index) => {
+            const precioNum = parseFloat(producto.precio.replace('$', ''));
+            total += precioNum * producto.cantidad;
+
+            const div = document.createElement('div');
+            div.classList.add('producto');
+            div.innerHTML = `
+                <strong>${producto.nombre}</strong><br>
+                <span>${producto.precio} x ${producto.cantidad}</span><br>
+                <button onclick="eliminarProducto(${index})">Eliminar</button>
+            `;
+            contenedor.appendChild(div);
+        });
+
+        totalEl.innerText = `Total: $${total.toFixed(2)}`;
+    }
+</script>
+
+</body>
+</html>
+
